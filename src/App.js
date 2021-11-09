@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { userService } from "./services";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!userService.isLoggedIn() ?
+        <>
+          <header className="App-header">
+            auth test with keycloak
+          </header>
+          <button onClick={userService.login}>Login with keycloak</button>
+        </> :
+        <>
+          <h1>welcome {userService.getUsername()}</h1>
+          <button onClick={userService.logout}>Logout</button>
+        </>
+      }
     </div>
   );
 }

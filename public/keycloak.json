@@ -1,0 +1,8 @@
+{
+  "realm": "mae-test-realm",
+  "auth-server-url": "http://localhost:8080/auth/",
+  "ssl-required": "external",
+  "resource": "react-keycloak",
+  "public-client": true,
+  "confidential-port": 0
+}
