@@ -17,6 +17,10 @@ const initKeycloak = (onAuthenticatedCallback) => {
     .then(onAuthenticatedCallback)
 }
 
+_kc.onAuthSuccess = () => {
+  console.log(_kc.tokenParsed)
+}
+
 const login = _kc.login
 const logout = _kc.logout
 
