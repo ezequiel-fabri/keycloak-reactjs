@@ -38,10 +38,23 @@ function App() {
             </div>
           </header>
         </> :
-        <>
-          <h1>welcome {userService.getUsername()}</h1>
-          <button onClick={userService.logout}>Logout</button>
-        </>
+        <div
+          style={{
+            margin: "1rem auto",
+            width: "40%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            boxShadow: "0px 12px 17px rgba(0, 0, 0, 0.14), 0px 5px 22px rgba(0, 0, 0, 0.12), 0px 7px 8px rgba(0, 0, 0, 0.2)"
+          }}>
+          <h1 style={{ textAlign: "center" }}>welcome {userService.getUsername()}</h1>
+          <button
+            onClick={userService.logout}
+            style={{ ...buttonPrimary, width: "100%" }}
+          >
+            Logout
+          </button>
+        </div >
       }
     </div>
   );
