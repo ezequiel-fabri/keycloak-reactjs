@@ -1,8 +1,8 @@
 {
-  "realm": "reactjs",
+  "realm": "Maecenic",
   "auth-server-url": "http://localhost:8080/auth/",
   "ssl-required": "external",
-  "resource": "react-cool-client",
+  "resource": "dApp-maecenic",
   "public-client": true,
   "confidential-port": 0
 }

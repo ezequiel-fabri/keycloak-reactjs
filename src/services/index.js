@@ -21,8 +21,9 @@ _kc.onAuthSuccess = () => {
   console.log(_kc.tokenParsed)
 }
 
-const login = _kc.login
 const logout = _kc.logout
+const login = options => _kc.login(options)
+const register = options => _kc.register(options)
 
 const getToken = () => _kc.token
 const isLoggedIn = () => !!_kc.token
@@ -42,6 +43,7 @@ export const userService = {
   initKeycloak,
   login,
   logout,
+  register,
   isLoggedIn,
   getToken,
   updateToken,
