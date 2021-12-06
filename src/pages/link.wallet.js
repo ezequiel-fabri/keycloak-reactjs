@@ -17,7 +17,7 @@ const LinkWallet = () => {
   const doFirstLogin = () => {
     const id = userService.getUid()
     if (!userService.getLocalStorage(id)) userService.setLocalStorage(id, "true")
-    navigate("/")
+    navigate("/proyectos")
   }
 
   return (

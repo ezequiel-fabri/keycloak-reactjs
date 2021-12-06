@@ -1,15 +1,14 @@
 import { Header } from "./lib"
-import { Dashboard } from "@styled-icons/material"
 import 'styled-components/macro'
 
-const AppBar = ({ children }) => {
+const AppBar = ({ icon: Icon, children }) => {
 
   // the icon isn't going to be fixed, it will depend
   return (
     <Header>
       <div css={`display: flex; align-items: center`}>
-        <Dashboard width="30" height="30" css={`margin-right: 10px;`} />
-        {children}
+        <Icon width="30" height="30" />
+        <h2 css={`font-size: 26px; margin: 0; margin-left: 0.5rem`}>{children}</h2>
       </div>
     </Header>
   )

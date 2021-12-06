@@ -30,6 +30,7 @@ export const Container = styled.div`
   padding: 1rem 2.6rem;
   box-sizing: border-box;
   margin: auto;
+  max-width: 400px;
 `;
 
 export const Header = styled.header`

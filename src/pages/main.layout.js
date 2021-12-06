@@ -1,8 +1,8 @@
+import { useEffect, useState } from "react"
+import { userService } from "../services"
 import { AppNavbar, AppBar } from "../components"
-import { Routes, Route, Outlet } from 'react-router-dom'
-import { LinkWallet, SuccessRegister, Home } from "./index"
+import { Outlet, useLocation, Navigate } from 'react-router-dom'
 import { Main } from "../components/lib"
-
 import { Dashboard, AttachMoney } from "@styled-icons/material"
 import { TrendingUp } from "@styled-icons/boxicons-regular"
 import { Person } from "@styled-icons/bootstrap"
@@ -38,32 +38,30 @@ const navItems = [
   },
 ]
 
-const Layout = () => {
+const MainLayout = () => {
+  const location = useLocation()
+  const navItem = navItems.find(item => item.to === location.pathname)
+  const [redirect, setRedirect] = useState(false)
+
+  useEffect(() => {
+    // get authenticated user id
+    const id = userService.getUid()
+    // redirect to welcome page if user has not logged in before in current machine
+    setRedirect(!userService.getLocalStorage(id))
+  }, [])
+
+  if (redirect) return <Navigate to="/welcome" />
+  if (!navItem) return <Navigate to="/proyectos" />
+
   return (
     <Main>
-      <AppBar>Proyectos</AppBar>
+      <AppBar icon={navItem.icon}>
+        {navItem.label}
+      </AppBar>
       <Outlet />
       <AppNavbar navItems={navItems} />
     </Main>
   )
 }
 
-const AppRoutes = () => {
-  return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route exact path="/" element={<Home />}>
-          <Route exact path="proyectos" element={"Proyectos"} />
-          <Route exact path="inversiones" element={"Inversiones"} />
-          <Route exact path="balance" element={"Balance"} />
-          <Route exact path="mi-cuenta" element={"Mi cuenta"} />
-          <Route path="*" element={"No match"} />
-        </Route>
-      </Route>
-      <Route exact path="/welcome" element={<SuccessRegister />} />
-      <Route exact path="/link-wallet" element={<LinkWallet />} />
-    </Routes >
-  )
-}
-
-export default AppRoutes
+export default MainLayout

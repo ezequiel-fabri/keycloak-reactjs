@@ -1,4 +1,4 @@
-import { AppRoutes } from "./pages";
+import { AppRoutes } from "./components";
 import ThemeContext from "./contexts/theme.context"
 import "./index.css"
 
