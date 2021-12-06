@@ -1,7 +1,13 @@
 import styled from "styled-components"
 
-export const App = styled.div`
+
+export const Main = styled.main`
   font-family: 'Urbanist';
+  background: ${props => props.theme.palette.mainBackground};
+  height: 100%;
+  min-height: 100vh;
+  max-width: 400px;
+  margin: auto;
 `;
 
 
@@ -23,9 +29,26 @@ export const Container = styled.div`
   min-height: 100vh;
   padding: 1rem 2.6rem;
   box-sizing: border-box;
-  max-width: 400px;
   margin: auto;
 `;
+
+export const Header = styled.header`
+  width: 100%;
+  background: ${props => props.theme.palette.primary[100]};
+  color: ${props => props.theme.palette.white};
+  font-weight: 700;
+  text-align: center;
+  line-height: 31px;
+  font-size: 26px;
+  border-radius: 0px 0px 24px 24px;
+  height: 122px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 1rem;
+  box-sizing: border-box;
+`;
+
 
 export const Title = styled.h6`
   margin: 0;

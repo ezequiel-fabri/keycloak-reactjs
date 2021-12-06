@@ -4,11 +4,21 @@ import {
   Container,
   ButtonPrimary,
   ButtonSecondary,
-} from "./components/lib"
-import { connect } from "./rlogin"
+} from "../components/lib"
+import { connect } from "../rlogin"
+import { userService } from "../services"
+import { useNavigate } from "react-router-dom"
 import 'styled-components/macro'
 
 const LinkWallet = () => {
+
+  const navigate = useNavigate()
+
+  const doFirstLogin = () => {
+    const id = userService.getUid()
+    if (!userService.getLocalStorage(id)) userService.setLocalStorage(id, "true")
+    navigate("/")
+  }
 
   return (
     <Container>
@@ -28,7 +38,7 @@ const LinkWallet = () => {
       <ButtonPrimary variant="white" css={`margin: 10px 0`} onClick={connect}>
         Vincular mi wallet
       </ButtonPrimary>
-      <ButtonSecondary variant="white">
+      <ButtonSecondary variant="white" onClick={doFirstLogin}>
         Omitir por ahora
       </ButtonSecondary>
     </Container>

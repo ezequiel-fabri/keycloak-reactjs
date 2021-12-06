@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { CheckCircle } from "@styled-icons/bootstrap/"
+import { CheckCircle } from "@styled-icons/bootstrap"
 import {
   Title,
   Text,
@@ -7,7 +7,7 @@ import {
   Badge,
   ButtonPrimary,
   ButtonSecondary,
-} from "./components/lib"
+} from "../components/lib"
 import { useNavigate } from "react-router-dom"
 import 'styled-components/macro'
 

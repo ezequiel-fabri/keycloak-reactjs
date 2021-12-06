@@ -18,7 +18,7 @@ const initKeycloak = (onAuthenticatedCallback) => {
 }
 
 _kc.onAuthSuccess = () => {
-  console.log(_kc.tokenParsed)
+  console.log("Authenticated")
 }
 
 const logout = _kc.logout
@@ -27,6 +27,7 @@ const register = options => _kc.register(options)
 
 const getToken = () => _kc.token
 const isLoggedIn = () => !!_kc.token
+const getUid = () => _kc.tokenParsed?.sub
 
 const getUsername = () => _kc.tokenParsed?.preferred_username
 
@@ -38,6 +39,17 @@ const updateToken = (successCallback) => {
     .catch(login)
 }
 
+const getLocalStorage = (key) => {
+  return localStorage.getItem(key)
+}
+
+const setLocalStorage = (key, value) => {
+  return localStorage.setItem(key, value)
+}
+
+const removeLocalStorage = (key) => {
+  return localStorage.removeItem(key)
+}
 
 export const userService = {
   initKeycloak,
@@ -49,4 +61,8 @@ export const userService = {
   updateToken,
   getUsername,
   hasRole,
+  getLocalStorage,
+  setLocalStorage,
+  removeLocalStorage,
+  getUid
 }

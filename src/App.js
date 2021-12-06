@@ -1,12 +1,12 @@
-import { App as Main } from "./components/lib";
-import AppRoutes from "./app.routes";
+import { AppRoutes } from "./pages";
+import ThemeContext from "./contexts/theme.context"
 import "./index.css"
 
 function App() {
   return (
-    <Main>
+    <ThemeContext>
       <AppRoutes />
-    </Main>
+    </ThemeContext>
   );
 }
 
