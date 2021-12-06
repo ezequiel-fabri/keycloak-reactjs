@@ -16,14 +16,14 @@ const navItems = [
     to: "/proyectos"
   },
   {
-    icon: AttachMoney,
+    icon: TrendingUp,
     label: "Inversiones",
     id: 1,
     labelledBy: "investment",
     to: "/inversiones"
   },
   {
-    icon: TrendingUp,
+    icon: AttachMoney,
     label: "Balance",
     id: 2,
     labelledBy: "balance",
