@@ -19,10 +19,6 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>
-        {/* <Route exact path="proyectos" element={"Proyectos"} />
-        <Route exact path="inversiones" element={"Inversiones"} />
-        <Route exact path="balance" element={"Balance"} />
-      <Route exact path="mi-cuenta" element={"Mi cuenta"} /> */}
         <Route exact path="mi-cuenta" element={<Logout />} />
         <Route path="*" element={null} />
       </Route>
