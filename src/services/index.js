@@ -15,10 +15,7 @@ const initKeycloak = (onAuthenticatedCallback) => {
     pkceMethod: 'S256',
   })
     .then(onAuthenticatedCallback)
-}
-
-_kc.onAuthSuccess = () => {
-  console.log("Authenticated")
+    .catch(_kc.logout)
 }
 
 const logout = _kc.logout

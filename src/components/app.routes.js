@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { LinkWallet, SuccessRegister, MainLayout } from "../pages"
+import { LinkWallet, SuccessRegister, MainLayout, Balance } from "../pages"
 import { userService } from '../services'
 import { ButtonPrimary } from "./lib"
 
@@ -20,6 +20,7 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<MainLayout />}>
         <Route exact path="mi-cuenta" element={<Logout />} />
+        <Route exact path="balance" element={<Balance />} />
         <Route path="*" element={null} />
       </Route>
       <Route exact path="/welcome" element={<SuccessRegister />} />

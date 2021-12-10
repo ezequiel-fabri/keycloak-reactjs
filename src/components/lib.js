@@ -1,6 +1,13 @@
 import styled from "styled-components"
 
 
+export const SectionTitle = styled.h2`
+  color: ${({ theme }) => theme.palette.lightGray};
+  font-size: 22px;
+  line-height: 110%;
+  font-weight: 700;
+`;
+
 export const Main = styled.main`
   font-family: 'Urbanist';
   background: ${props => props.theme.palette.mainBackground};
@@ -85,8 +92,8 @@ const getPrimaryBackground = (variant, theme) => {
 const getPrimaryColor = (variant, theme) => {
   switch (variant) {
     case 'primary':
+    case 'standard':
       return theme.palette.white
-
     case 'secondary':
     case 'white':
       return theme.palette.primary[100]

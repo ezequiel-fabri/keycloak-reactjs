@@ -1,3 +1,4 @@
+import styled from "styled-components"
 import { useEffect, useState } from "react"
 import { userService } from "../services"
 import { AppNavbar, AppBar } from "../components"
@@ -38,6 +39,13 @@ const navItems = [
   },
 ]
 
+const PageContainer = styled.div`
+  padding: 1.5rem;
+  height: calc(100vh - 90px - 122px); // 90px Navbar height, 122px header height
+  overflow-y: auto; 
+  box-sizing: border-box;
+`;
+
 const MainLayout = () => {
   const location = useLocation()
   const navItem = navItems.find(item => item.to === location.pathname)
@@ -58,7 +66,9 @@ const MainLayout = () => {
       <AppBar icon={navItem.icon}>
         {navItem.label}
       </AppBar>
-      <Outlet />
+      <PageContainer>
+        <Outlet />
+      </PageContainer>
       <AppNavbar navItems={navItems} />
     </Main>
   )
