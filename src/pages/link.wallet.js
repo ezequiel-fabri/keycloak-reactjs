@@ -5,7 +5,7 @@ import {
   ButtonPrimary,
   ButtonSecondary,
 } from "../components/lib"
-import { connect } from "../rlogin"
+// import { connect } from "../rlogin"
 import { userService } from "../services"
 import { useNavigate } from "react-router-dom"
 import 'styled-components/macro'
@@ -35,7 +35,7 @@ const LinkWallet = () => {
           css={`width: 100%; height: 100%`}
         />
       </div>
-      <ButtonPrimary variant="white" css={`margin: 10px 0`} onClick={connect}>
+      <ButtonPrimary variant="white" css={`margin: 10px 0`}>
         Vincular mi wallet
       </ButtonPrimary>
       <ButtonSecondary variant="white" onClick={doFirstLogin}>

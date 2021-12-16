@@ -40,7 +40,7 @@ const navItems = [
 ]
 
 const PageContainer = styled.div`
-  padding: 1.5rem;
+  padding: 0.5rem 1.5rem 1.5rem 1.5rem;
   height: calc(100vh - 90px - 122px); // 90px Navbar height, 122px header height
   overflow-y: auto; 
   box-sizing: border-box;

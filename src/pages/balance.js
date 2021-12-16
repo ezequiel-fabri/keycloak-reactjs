@@ -1,9 +1,14 @@
-import { connect } from "../rlogin"
+import { useWalletContext } from "../hooks"
 import { PageTitle } from "../components"
 import { ButtonPrimary } from "../components/lib"
+import { WalletConnected } from "./index"
 import "styled-components/macro"
 
 const Balance = () => {
+
+  const { connect, isConnected } = useWalletContext()
+  if (isConnected) return <WalletConnected />
+
   return (
     <>
       <PageTitle>

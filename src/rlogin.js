@@ -47,9 +47,3 @@ export const rLogin = new RLogin({
   rpcUrls,
   supportedChains
 })
-
-export const connect = () => rLogin.connect()
-  .then(({ provider }) => { // the provider is used to operate with user's wallet
-    // request user's account
-    provider.request({ method: 'eth_accounts' }).then(([account]) => console.log(account))
-  })

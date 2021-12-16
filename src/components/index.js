@@ -7,5 +7,5 @@ export {
   AppBar,
   AppNavbar,
   AppRoutes,
-  PageTitle
+  PageTitle,
 }
