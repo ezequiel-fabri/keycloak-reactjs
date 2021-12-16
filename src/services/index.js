@@ -18,7 +18,12 @@ const initKeycloak = (onAuthenticatedCallback) => {
     .catch(_kc.logout)
 }
 
+/* _kc.onAuthSuccess = () => {
+  // api call, firstLogin: true
+} */
+
 const logout = _kc.logout
+
 const login = options => _kc.login(options)
 const register = options => _kc.register(options)
 
